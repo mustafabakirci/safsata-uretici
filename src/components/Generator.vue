@@ -20,11 +20,16 @@ export default {
             input: "",
             safsatalar: 
             [
-                "ülke yanıyor bunlar SAFSATA peşinde", 
+                "Ülke yanıyor bunlar SAFSATA peşinde.", 
                 "Almanya'da, Fransa'da da SAFSATA. Ondan da bahsettiniz mi?",
                 "Evet SAFSATA ama bunların bu ülkede bir tane çivi çakmışlığı var mı?",
                 "Ülkede özgürlük olmasa SAFSATA diye tweet atabilir miydin?",
                 "SAFSATA diyenler teröristtir.",
+                "SAFSATA diyorsun ama telefonunu çıkar bir bakalım!",
+                "SAFSATA falan bırakın bu işleri. Kılıçdaroğlu SSK'yı batırmadı mı?",
+                "Eskiden buzdolabı, fırın bulabiliyor muydunuz? Şimdi SAFSATA demenin bir anlamı yok. ",
+                "SAFSATA diyenlerin ar damarları çatlamış, şeref ve haysiyet ölçüleri kaybolmuştur.",
+                "Yarım gazeteciler, çeyrek aydınlar ancak SAFSATA derler."
             ],
             result: ""
         }
