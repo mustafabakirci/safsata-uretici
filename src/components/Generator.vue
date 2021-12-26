@@ -5,7 +5,9 @@
             <input type="text" v-model="input" minlength="5" required placeholder="vergiler çok fazla">
             <button type="submit">ÜRET</button>
         </form>
-        
+        <div class="shortcuts">
+            <button type="button" v-for="item in shortcuts" :key="item" @click="fastSafsata(item)">{{item}}</button>
+        </div>
     </div>
     <div class="result">
         {{result.replace("SAFSATA", input)}}
@@ -18,11 +20,16 @@ export default {
     data() {
         return {
             input: "",
+            shortcuts: [
+                "vergiler çok fazla",
+                "alım gücümüz düştü",
+                "dolar çok yüksek"
+            ],
             safsatalar: 
             [
                 "Ülke yanıyor bunlar SAFSATA peşinde.", 
                 "Almanya'da, Fransa'da da SAFSATA. Ondan da bahsettiniz mi?",
-                "Evet SAFSATA ama bunların bu ülkede bir tane çivi çakmışlığı var mı?",
+                "Evet SAFSATA ama CEHAPE'nin bu ülkede bir tane çivi çakmışlığı var mı?",
                 "Ülkede özgürlük olmasa SAFSATA diye tweet atabilir miydin?",
                 "SAFSATA diyenler teröristtir.",
                 "SAFSATA diyorsun ama telefonunu çıkar bir bakalım!",
@@ -35,6 +42,10 @@ export default {
         }
     },
     methods: {
+        fastSafsata (value) {
+            this.input = value
+            this.generateSafsata()
+        },
         generateSafsata () {
             var randomText = this.safsatalar[(Math.random() * this.safsatalar.length) | 0]
             this.result = randomText
@@ -60,6 +71,7 @@ export default {
             margin-left: auto;
             margin-right: auto;
             display: flex;
+            flex-direction: column;
             padding-top: 150px;
             align-items: center;
             justify-content: center;
@@ -83,6 +95,19 @@ export default {
                 padding: 0 30px;
                 font-weight: 600;
             }
+            .shortcuts {
+                margin-top: 20px;
+                button {
+                    background: $soft-white;
+                    color: #002c46;
+                    height: 40px;
+                    padding: 0 15px;
+                    font-size: 14px;
+                    +button {
+                        margin-left: 10px;
+                    }
+                }
+            }
         }
         .result {
             padding: 25px;
@@ -98,7 +123,9 @@ export default {
                 position: absolute;
                 right: -120px;
                 bottom: 0;
-                width: 500px;
+                max-height: 550px;
+                min-width: 500px;
+                max-width: 650px;
                 padding: 85px;
                 text-align: left;
             }
