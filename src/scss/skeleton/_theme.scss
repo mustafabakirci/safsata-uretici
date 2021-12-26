@@ -1,0 +1,49 @@
+img, i {vertical-align: middle;}
+
+img {
+    max-width: 100%;
+    &.svgimage {
+        display: none;
+    }
+}
+
+*{outline:0 !important;}
+*, ::after, ::before { 
+    box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap');
+
+h1,h2,h3,h4,h5,h6,input, textarea, select {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+html { 
+    scroll-behavior: smooth;
+}
+body {
+    line-height: 1;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    background: $white;
+    font-family: 'Titillium Web', sans-serif;
+    overflow-x: hidden;
+    background-color: $dark-grey;
+    background: #88e8a7;
+    &.overlayed {
+        overflow: hidden;
+    }
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .3s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
+

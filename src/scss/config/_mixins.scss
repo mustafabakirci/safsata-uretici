@@ -1,0 +1,17 @@
+@mixin dark-mode
+{
+    @media (prefers-color-scheme: dark) { @content; }
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin transition($efekt: ease-in-out, $sure: .25s) {
+    transition: all $efekt $sure; 
+    -moz-transition: all $efekt $sure; 
+    -webkit-transition: all $efekt $sure; 
+    -o-transition: all $efekt $sure;
+}
