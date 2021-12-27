@@ -5,8 +5,6 @@ module.exports = {
       scss: {
         prependData: `
           @import "@/scss/config/_variables.scss";
-          @import "@/scss/config/_mixins.scss";
-          @import "@/scss/config/_functions.scss";
           @import "@/scss/config/_media.scss";
         `
       }

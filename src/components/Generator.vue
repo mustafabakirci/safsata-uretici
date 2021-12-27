@@ -56,16 +56,24 @@ export default {
 
 <style lang="scss" scoped>
     .generator {
-        height: calc(100vh - 100px);
+        min-height: calc(100vh - 100px);
         background: url(~@/assets/bg.jpg) no-repeat center center;
         background-size: cover;
         width: calc(100% - 120px);
         position: relative;
         box-shadow: 6px -7px 18px -19px rgba(0,0,0,0.58);
+        
         @include screen-down(sm) {
             /* height: auto; */
+            overflow: hidden;
             width: 100%;
             padding: 30px;
+            form {
+                width: 100%;
+                input {
+                    width: calc(100% - 98px);
+                }
+            }
         }
         .inner {
             margin-left: auto;
@@ -97,12 +105,41 @@ export default {
             }
             .shortcuts {
                 margin-top: 20px;
+                @include screen-down(sm) {
+                    width: calc(100% + 60px);
+                    margin-right: -60px;
+                    flex-wrap: nowrap;
+                    overflow: hidden;
+                    overflow-x: auto;
+                    -webkit-overflow-scrolling: touch;
+                    -ms-overflow-style: -ms-autohiding-scrollbar;
+                    -ms-scroll-snap-type: x mandatory;
+                    scroll-snap-type: x mandatory;
+                    display: flex;
+                    &::-webkit-scrollbar {
+                    display: none; 
+                    }  
+                    >* {
+                    //   scroll-snap-align:end;
+                    order: 3;
+                    }
+                    &::after {
+                    content: "";
+                    min-width: 30px;
+                    width: 30px;
+                    height: 15px;
+                    display: block;
+                    order: 4;
+                    margin-left: 20px;
+                    }
+                }
                 button {
                     background: $soft-white;
                     color: #002c46;
                     height: 40px;
                     padding: 0 15px;
                     font-size: 14px;
+                    white-space: nowrap;
                     +button {
                         margin-left: 10px;
                     }
